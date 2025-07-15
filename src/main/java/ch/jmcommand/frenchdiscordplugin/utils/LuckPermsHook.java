@@ -1,6 +1,7 @@
 package ch.jmcommand.frenchdiscordplugin.utils;
 
 import net.luckperms.api.LuckPerms;
+import net.luckperms.api.LuckPermsProvider;
 import net.luckperms.api.model.user.User;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -19,7 +20,7 @@ public class LuckPermsHook {
     }
 
     public static LuckPerms getLuckPerms() {
-        return luckPerms;
+        return LuckPermsProvider.get();
     }
 
     public static String getPrefix(Player player) {

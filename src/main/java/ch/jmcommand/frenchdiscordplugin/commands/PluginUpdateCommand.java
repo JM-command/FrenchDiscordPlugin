@@ -102,7 +102,7 @@ public class PluginUpdateCommand implements CommandExecutor {
 
                 // Télécharge le nouveau JAR
                 InputStream inStream = new URL(downloadUrl).openStream();
-                String fileName = "FrenchDiscordPlugin-" + tag.replace("v", "") + ".jar";
+                String fileName = "FrenchDiscordPlugin.jar";
                 Path target = Paths.get("plugins", fileName);
                 Files.copy(inStream, target, StandardCopyOption.REPLACE_EXISTING);
 

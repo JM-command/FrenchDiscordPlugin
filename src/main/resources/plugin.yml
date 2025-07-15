@@ -80,6 +80,22 @@ commands:
     description: Met à jour le plugin depuis GitHub Releases
     usage: /pluginupdate [version]
     permission: frenchdiscord.update
+  boutique:
+    description: Ouvre la boutique d'achats de permissions
+    usage: /boutique
+    permission: frenchdiscord.boutique
+  spawn:
+    description: Téléporte au spawn
+    permission: frenchdiscord.spawn
+  sethome:
+    description: Enregistre un home
+    permission: frenchdiscord.sethome
+  home:
+    description: Téléporte à un home
+    permission: frenchdiscord.home
+  back:
+    description: Retourne à ta dernière position
+    permission: frenchdiscord.back
 
 permissions:
   frenchdiscord.visiteur:
@@ -127,3 +143,50 @@ permissions:
   frenchdiscord.update:
     description: Permission pour mettre à jour le plugin
     default: op
+  frenchdiscord.boutique:
+    description: Permet d'accéder à la boutique
+    default: true
+  frenchdiscord.keepinv:
+    description: Permet de garder l'inventaire après la mort
+    default: false
+  frenchdiscord.spawn:
+    description: Permet d'utiliser la commande /spawn
+    default: false
+  frenchdiscord.spawn:
+    default: false
+  frenchdiscord.sethome:
+    default: false
+  frenchdiscord.home:
+    default: false
+  frenchdiscord.home.max.1:
+    description: Permet 1 home maximum
+    default: false
+  frenchdiscord.home.max.2:
+    description: Permet 2 homes maximum
+    default: false
+  frenchdiscord.home.max.3:
+    description: Permet 3 homes maximum
+    default: false
+  frenchdiscord.home.max.4:
+    description: Permet 4 homes maximum
+    default: false
+  frenchdiscord.home.max.5:
+    description: Permet 5 homes maximum
+    default: false
+  frenchdiscord.home.max.6:
+    description: Permet 6 homes maximum
+    default: false
+  frenchdiscord.home.max.7:
+    description: Permet 7 homes maximum
+    default: false
+  frenchdiscord.home.max.8:
+    description: Permet 8 homes maximum
+    default: false
+  frenchdiscord.home.max.9:
+    description: Permet 9 homes maximum
+    default: false
+  frenchdiscord.home.max.10:
+    description: Permet 10 homes maximum
+    default: false
+  frenchdiscord.back:
+    default: false
