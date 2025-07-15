@@ -25,7 +25,9 @@ jobs:
 
       - name: Get project version from pom.xml
         id: get_version
-        run: echo "version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
+        run: |
+          version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+          echo "version=$version" >> $GITHUB_OUTPUT
 
       - name: Build with Maven
         run: mvn clean package
@@ -47,7 +49,9 @@ jobs:
 
       - name: Get project version from pom.xml
         id: get_version
-        run: echo "version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
+        run: |
+          version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+          echo "version=$version" >> $GITHUB_OUTPUT
 
       - name: Create Git tag
         run: |
@@ -61,19 +65,13 @@ jobs:
         with:
           name: FrenchDiscordPlugin
 
-      - name: Create Release
+      - name: Create Release and upload jar
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.get_version.outputs.version }}
           name: Release v${{ steps.get_version.outputs.version }}
           body: |
             Automatic build for FrenchDiscordPlugin version v${{ steps.get_version.outputs.version }}.
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload Jar to Release
-        uses: softprops/action-gh-release@v2
-        with:
           files: "*.jar"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
