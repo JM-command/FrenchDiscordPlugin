@@ -76,6 +76,10 @@ commands:
     description: Passe un visiteur en joueur normal
     usage: /<command> <pseudo>
     permission: frenchdiscord.promoteplayer
+  pluginupdate:
+    description: Met à jour le plugin depuis GitHub Releases
+    usage: /pluginupdate [version]
+    permission: frenchdiscord.update
 
 permissions:
   frenchdiscord.visiteur:
@@ -119,4 +123,7 @@ permissions:
     default: op
   frenchdiscord.promoteplayer:
     description: Passer un visiteur en joueur normal
+    default: op
+  frenchdiscord.update:
+    description: Permission pour mettre à jour le plugin
     default: op

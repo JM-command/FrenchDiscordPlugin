@@ -48,6 +48,7 @@ public class FrenchDiscordPlugin extends JavaPlugin {
         getCommand("anvil").setExecutor(new ch.jmcommand.frenchdiscordplugin.commands.AnvilCommand());
 
         getCommand("promoteplayer").setExecutor(new ch.jmcommand.frenchdiscordplugin.commands.PromotePlayerCommand());
+        getCommand("pluginupdate").setExecutor(new ch.jmcommand.frenchdiscordplugin.commands.PluginUpdateCommand(this));
 
     }
 
