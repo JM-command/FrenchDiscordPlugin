@@ -108,8 +108,11 @@ permissions:
     description: Utiliser la commande /rules et /regles
     default: true
   frenchdiscord.help:
-    description: Utiliser la commande /help et /aide
+    description: Permet d'utiliser /help
     default: true
+  frenchdiscord.staff:
+    description: Permet de voir les commandes staff dans /help
+    default: false
   frenchdiscord.site:
     description: Utiliser la commande /site
     default: true
