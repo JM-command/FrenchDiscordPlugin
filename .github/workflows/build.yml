@@ -23,6 +23,10 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
+      - name: Get project version from pom.xml
+        id: get_version
+        run: echo "version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
+
       - name: Build with Maven
         run: mvn clean package
 
@@ -38,6 +42,20 @@ jobs:
     if: github.ref == 'refs/heads/master'
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get project version from pom.xml
+        id: get_version
+        run: echo "version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
+
+      - name: Create Git tag
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git tag v${{ steps.get_version.outputs.version }}
+          git push origin v${{ steps.get_version.outputs.version }}
+
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
@@ -46,10 +64,10 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.${{ github.run_number }}
-          name: Release v1.${{ github.run_number }}
+          tag_name: v${{ steps.get_version.outputs.version }}
+          name: Release v${{ steps.get_version.outputs.version }}
           body: |
-            Automatic build for FrenchDiscordPlugin.
+            Automatic build for FrenchDiscordPlugin version v${{ steps.get_version.outputs.version }}.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
