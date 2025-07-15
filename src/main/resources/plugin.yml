@@ -1,0 +1,122 @@
+name: FrenchDiscordPlugin
+version: '${project.version}'
+main: ch.jmcommand.frenchdiscordplugin.FrenchDiscordPlugin
+api-version: '1.21'
+authors: [JM_command]
+commands:
+  discord:
+    description: Affiche le lien Discord
+    usage: /<command>
+    permission: frenchdiscord.discord
+  rules:
+    description: Affiche les règles du serveur
+    usage: /<command>
+    permission: frenchdiscord.rules
+  regles:
+    description: Affiche les règles du serveur (version FR)
+    usage: /<command>
+    permission: frenchdiscord.rules
+  aide:
+    description: Affiche la liste des commandes
+    usage: /<command>
+    permission: frenchdiscord.help
+  help:
+    description: Affiche la liste des commandes
+    usage: /<command>
+    permission: frenchdiscord.help
+  site:
+    description: Affiche le lien du site
+    usage: /<command>
+    permission: frenchdiscord.site
+  gms:
+    description: Change en gamemode survival
+    usage: /<command>
+    permission: frenchdiscord.gamemode
+  gmc:
+    description: Change en gamemode creative
+    usage: /<command>
+    permission: frenchdiscord.gamemode
+  gma:
+    description: Change en gamemode adventure
+    usage: /<command>
+    permission: frenchdiscord.gamemode
+  gmsp:
+    description: Change en gamemode spectator
+    usage: /<command>
+    permission: frenchdiscord.gamemode
+  heal:
+    description: Soigne le joueur
+    usage: /<command>
+    permission: frenchdiscord.heal
+  feed:
+    description: Nourrit le joueur
+    usage: /<command>
+    permission: frenchdiscord.feed
+  ec:
+    description: Ouvre l'ender chest
+    usage: /<command>
+    permission: frenchdiscord.ec
+  craft:
+    description: Ouvre la table de craft
+    usage: /<command>
+    permission: frenchdiscord.craft
+  furnace:
+    description: Ouvre le four
+    usage: /<command>
+    permission: frenchdiscord.furnace
+  compress:
+    description: Compresse des items
+    usage: /<command>
+    permission: frenchdiscord.compress
+  anvil:
+    description: Ouvre l'enclume
+    usage: /<command>
+    permission: frenchdiscord.anvil
+  promoteplayer:
+    description: Passe un visiteur en joueur normal
+    usage: /<command> <pseudo>
+    permission: frenchdiscord.promoteplayer
+
+permissions:
+  frenchdiscord.visiteur:
+    description: Permission du grade Visiteur
+    default: false
+  frenchdiscord.discord:
+    description: Utiliser la commande /discord
+    default: true
+  frenchdiscord.rules:
+    description: Utiliser la commande /rules et /regles
+    default: true
+  frenchdiscord.help:
+    description: Utiliser la commande /help et /aide
+    default: true
+  frenchdiscord.site:
+    description: Utiliser la commande /site
+    default: true
+  frenchdiscord.gamemode:
+    description: Changer de gamemode
+    default: op
+  frenchdiscord.heal:
+    description: Utiliser la commande /heal
+    default: op
+  frenchdiscord.feed:
+    description: Utiliser la commande /feed
+    default: op
+  frenchdiscord.ec:
+    description: Utiliser la commande /ec
+    default: op
+  frenchdiscord.craft:
+    description: Utiliser la commande /craft
+    default: op
+  frenchdiscord.furnace:
+    description: Utiliser la commande /furnace
+    default: op
+  frenchdiscord.compress:
+    description: Utiliser la commande /compress
+    default: op
+  frenchdiscord.anvil:
+    description: Utiliser la commande /anvil
+    default: op
+  frenchdiscord.promoteplayer:
+    description: Passer un visiteur en joueur normal
+    default: op
