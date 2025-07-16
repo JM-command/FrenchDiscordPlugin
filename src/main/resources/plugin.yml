@@ -118,34 +118,34 @@ permissions:
     default: true
   frenchdiscord.gamemode:
     description: Changer de gamemode
-    default: op
+    default: false
   frenchdiscord.heal:
     description: Utiliser la commande /heal
-    default: op
+    default: false
   frenchdiscord.feed:
     description: Utiliser la commande /feed
-    default: op
+    default: false
   frenchdiscord.ec:
     description: Utiliser la commande /ec
-    default: op
+    default: false
   frenchdiscord.craft:
     description: Utiliser la commande /craft
-    default: op
+    default: false
   frenchdiscord.furnace:
     description: Utiliser la commande /furnace
-    default: op
+    default: false
   frenchdiscord.compress:
     description: Utiliser la commande /compress
-    default: op
+    default: false
   frenchdiscord.anvil:
     description: Utiliser la commande /anvil
-    default: op
+    default: false
   frenchdiscord.promoteplayer:
     description: Passer un visiteur en joueur normal
-    default: op
+    default: false
   frenchdiscord.update:
     description: Permission pour mettre à jour le plugin
-    default: op
+    default: false
   frenchdiscord.boutique:
     description: Permet d'accéder à la boutique
     default: true
@@ -154,8 +154,6 @@ permissions:
     default: false
   frenchdiscord.spawn:
     description: Permet d'utiliser la commande /spawn
-    default: false
-  frenchdiscord.spawn:
     default: false
   frenchdiscord.sethome:
     default: false

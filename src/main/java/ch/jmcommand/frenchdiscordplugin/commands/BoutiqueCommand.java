@@ -1,5 +1,6 @@
 package ch.jmcommand.frenchdiscordplugin.commands;
 
+import ch.jmcommand.frenchdiscordplugin.utils.LuckPermsHook;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.model.user.User;
 import net.luckperms.api.node.types.PermissionNode;
@@ -92,7 +93,7 @@ public class BoutiqueCommand implements CommandExecutor, Listener {
         }
 
         removeItems(player, Material.TOTEM_OF_UNDYING, totemsNeeded);
-        givePerm(player, "frenchdiscord.keepinv");
+        LuckPermsHook.givePermission(player, "frenchdiscord.keepinv");
         player.sendMessage("§aTu as débloqué le KeepInventory !");
         player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
     }
@@ -106,18 +107,9 @@ public class BoutiqueCommand implements CommandExecutor, Listener {
         }
 
         removeItems(player, Material.DIAMOND, diamondsNeeded);
-        givePerm(player, "frenchdiscord.spawn");
+        LuckPermsHook.givePermission(player, "frenchdiscord.spawn");
         player.sendMessage("§aTu as débloqué la commande /spawn !");
         player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 1);
-    }
-
-    private void givePerm(Player player, String permission) {
-        User user = luckPerms.getUserManager().getUser(player.getUniqueId());
-        if (user == null) return;
-
-        PermissionNode node = PermissionNode.builder(permission).build();
-        user.data().add(node);
-        luckPerms.getUserManager().saveUser(user);
     }
 
     private int countItems(Player player, Material mat) {
