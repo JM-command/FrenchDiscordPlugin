@@ -72,7 +72,6 @@ public class FrenchDiscordPlugin extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
         getServer().getPluginManager().registerEvents(new BackListener(), this);
         getServer().getPluginManager().registerEvents(new KeepInventoryListener(), this);
-        getServer().getPluginManager().registerEvents(new CommandRestrictListener(), this);
 
     }
 

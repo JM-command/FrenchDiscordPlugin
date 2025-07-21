@@ -3,6 +3,10 @@ version: '${project.version}'
 main: ch.jmcommand.frenchdiscordplugin.FrenchDiscordPlugin
 api-version: '1.21'
 authors: [JM_command]
+description: Plugin pour le serveur Discord de FrenchDiscord
+website: https://github.com/JM-command/FrenchDiscordPlugin
+depend: [Vault, LuckPerms]
+softdepend: [PlaceholderAPI]
 commands:
   discord:
     description: Affiche le lien Discord
