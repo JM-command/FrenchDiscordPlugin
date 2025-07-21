@@ -92,24 +92,44 @@ public class BoutiqueCommand implements CommandExecutor, Listener {
 
     private void buyHomeSlot(Player player) {
         int currentMax = getCurrentHomeLimit(player);
+
         if (currentMax >= 10) {
             player.sendMessage("§cTu as déjà le maximum de homes !");
             return;
         }
+
         if (countItems(player, Material.EMERALD_BLOCK) < 3 * 64) {
             player.sendMessage("§cTu n'as pas assez de blocs d’émeraude !");
             return;
         }
+
         removeItems(player, Material.EMERALD_BLOCK, 3 * 64);
+
+        // Donne la permission du prochain slot
         String perm = "frenchdiscord.home.max." + (currentMax + 1);
         LuckPermsHook.givePermission(player, perm);
+
+        // Si c'est le premier slot acheté, on donne aussi les commandes liées
+        if (currentMax == 0) {
+            String[] homePerms = {
+                    "frenchdiscord.home",
+                    "frenchdiscord.sethome",
+                    "frenchdiscord.delhome"
+            };
+            for (String p : homePerms) {
+                LuckPermsHook.givePermission(player, p);
+            }
+        }
+
         player.sendMessage("§aTu as maintenant droit à §e" + (currentMax + 1) + " §ahomes !");
     }
+
 
     private int getCurrentHomeLimit(Player player) {
         for (int i = 10; i >= 1; i--) {
             if (player.hasPermission("frenchdiscord.home.max." + i)) return i;
         }
+
         return 0;
     }
 

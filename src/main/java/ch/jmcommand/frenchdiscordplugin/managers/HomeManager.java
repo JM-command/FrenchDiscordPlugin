@@ -55,6 +55,15 @@ public class HomeManager {
         return homes;
     }
 
+    public boolean removeHome(UUID uuid, String name) {
+        String path = "homes." + uuid + "." + name;
+        if (!config.contains(path)) return false;
+
+        config.set(path, null);
+        save();
+        return true;
+    }
+
     private void save() {
         try {
             config.save(file);

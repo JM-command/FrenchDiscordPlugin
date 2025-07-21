@@ -51,6 +51,7 @@ public class FrenchDiscordPlugin extends JavaPlugin {
         getCommand("spawn").setExecutor(new SpawnCommand());
         getCommand("sethome").setExecutor(new SetHomeCommand(homeManager));
         getCommand("home").setExecutor(new HomeCommand(homeManager));
+        getCommand("delhome").setExecutor(new DelHomeCommand(homeManager));
         getCommand("back").setExecutor(new BackCommand());
 
 

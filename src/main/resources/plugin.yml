@@ -93,6 +93,9 @@ commands:
   home:
     description: Téléporte à un home
     permission: frenchdiscord.home
+  delhome:
+    description: Supprime un home
+    permission: frenchdiscord.delhome
   back:
     description: Retourne à ta dernière position
     permission: frenchdiscord.back
@@ -158,6 +161,9 @@ permissions:
   frenchdiscord.sethome:
     default: false
   frenchdiscord.home:
+    default: false
+  frenchdiscord.delhome:
+    description: Permet de supprimer un home
     default: false
   frenchdiscord.home.max.1:
     description: Permet 1 home maximum
