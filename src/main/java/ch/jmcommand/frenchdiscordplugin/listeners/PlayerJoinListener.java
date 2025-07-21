@@ -32,7 +32,8 @@ public class PlayerJoinListener implements Listener {
 
         if (isVisitor) {
             player.setGameMode(GameMode.ADVENTURE);
-            player.sendMessage("§e[FrenchDiscordPlugin] Tu es en mode Visiteur (Adventure).");
+            player.sendMessage("§e[FrenchDiscord] Tu es en mode Visiteur (Adventure).");
+            player.sendMessage("§e[FrenchDiscord] Tu peux rejoindre le serveur en mode Survie en utilisant la commande /link.");
         } else {
             player.setGameMode(GameMode.SURVIVAL);
         }

@@ -2,6 +2,7 @@ package ch.jmcommand.frenchdiscordplugin.commands;
 
 import ch.jmcommand.frenchdiscordplugin.utils.LuckPermsHook;
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -18,7 +19,7 @@ public class PromotePlayerCommand implements CommandExecutor {
         }
 
         if (args.length != 1) {
-            sender.sendMessage("§cUsage: /promoteplayer <pseudo>");
+            sender.sendMessage("§cUsage : /promoteplayer <pseudo>");
             return true;
         }
 
@@ -28,10 +29,17 @@ public class PromotePlayerCommand implements CommandExecutor {
             return true;
         }
 
+        // Vérifie que LuckPerms est chargé
+        if (LuckPermsHook.getLuckPerms() == null) {
+            sender.sendMessage("§cErreur : LuckPerms n’est pas chargé !");
+            return true;
+        }
+
+        // Applique les changements
         LuckPermsHook.setGroup(target, "joueur");
-        target.setGameMode(org.bukkit.GameMode.SURVIVAL);
-        sender.sendMessage("§a" + target.getName() + " est maintenant joueur !");
+        target.setGameMode(GameMode.SURVIVAL);
         target.sendMessage("§aTu es passé joueur !");
+        sender.sendMessage("§a" + target.getName() + " est maintenant joueur !");
         return true;
     }
 }
