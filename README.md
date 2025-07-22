@@ -109,8 +109,11 @@ Plugin made for the [French Discord](https://discord.gg/baguettes) community ser
 
 ## 🛠 Contributing
 
-Contributions are welcome!  
-Open a pull request or submit issues for bugs, suggestions, or ideas.
+This is an open-source, community-driven project — and **you can help!** 🚀  
+Fork the repo, make your changes, and open a pull request.  
+All contributions are welcome, whether it's code, ideas, or feedback 🙏
+
+👉 See [`CONTRIBUTING.md`](./CONTRIBUTING.md) to get started.
 
 ---
 
